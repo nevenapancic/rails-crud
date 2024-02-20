@@ -1,0 +1,27 @@
+<%= form_with model: @restaurant do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :address %>
+  <%= form.text_field :address %>
+
+  <%= form.label :rating %>
+  <%= form.number_field :rating %>
+
+  <%= form.submit %>
+<% end %>
+<%# new way to write forms %>
+<%# it gives form in this html %>
+<%# <form action="/restaurants" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
+  <label for="restaurant_name">Name</label>
+  <input type="text" name="restaurant[name]" id="restaurant_name">
+  <label for="restaurant_address">Address</label>
+  <input type="text" name="restaurant[address]" id="restaurant_address">
+  <label for="restaurant_rating">Rating</label>
+  <input type="number" name="restaurant[rating]" id="restaurant_rating">
+  <input type="submit" name="commit" value="Create Restaurant" data-disable-with="Create Restaurant">
+</form> %>
+<%# form for user to add inside new restaurant so we ask him for all data that is needed, name, address, rating %>
+<%# HERE WE MADE A GET PAGE, now we also need POST PAGE TO SAVE IT IN ACTIVE RECORD %>
+<%= link_to 'go back', restaurant_path %>

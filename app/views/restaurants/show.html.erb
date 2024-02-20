@@ -1,0 +1,10 @@
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+<p><%= "*" * @restaurant.rating %></p>
+<%# good practice is to call making the views in terminal with touch and specifying the path %>
+<%# good so that people dont choose restaurant by index but by name we do that in index html %>
+<%= link_to 'go back', restaurant_path %>
+<%= link_to 'edit', edit_restaurant_path(@restaurant.id) %>
+<%# these paths are  from as part %>
+<%= link_to 'delete', destroy_restaurant_path(@restaurant.id)
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
